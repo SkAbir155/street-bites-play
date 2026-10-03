@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Street Bites: download</title>
+  <link rel="icon" href="assets/icon.png">
+  <style>
+    @font-face { font-family: 'Monocraft'; src: url('lib/fonts/Monocraft.ttf') format('truetype'); }
+    :root { --bg: #1a120b; --panel: #b86a2e; --paper: #f3e2b3; --ink: #4a2610; --gold: #ffd166; --edge: #3b1f0c; }
+    html, body { margin: 0; background: var(--bg); color: #fff6dc; font-family: 'Monocraft', 'Courier New', monospace; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
+    h1 { color: var(--gold); font-size: clamp(30px, 8vw, 52px); margin: 8px 0 4px; text-shadow: 0 3px 0 #b5541a, 0 6px 0 #6e2f0c; }
+    .sub { margin: 0 0 22px; opacity: 0.85; }
+    .card { background: var(--paper); color: var(--ink); border: 4px solid var(--edge); border-radius: 6px; padding: 14px 16px; margin: 14px 0; }
+    .card h2 { margin: 0 0 6px; font-size: 20px; }
+    .card p, .card li { line-height: 1.5; font-size: 15px; }
+    .card ol { padding-left: 22px; margin: 6px 0 0; }
+    a.btn { display: inline-block; background: var(--gold); color: #3b2a12; border: 3px solid var(--edge); border-radius: 6px;
+      padding: 10px 16px; text-decoration: none; box-shadow: inset 0 -4px 0 #f4b942; margin: 6px 0; }
+    .build { opacity: 0.7; font-size: 13px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Street Bites</h1>
+  <p class="sub">A restaurant game by Abir's. Build <span id="build">14</span>.</p>
+
+  <div class="card">
+    <h2>▶ Play in the browser</h2>
+    <p>Works on a computer, phone or tablet. Always the newest version.</p>
+    <a class="btn" href="./">Play now</a>
+    <p>To keep it on your computer and play offline: open the game in Chrome or Edge, then click the
+      install button at the right end of the address bar (a small screen with an arrow), or the ⋮ menu, then "Install".</p>
+  </div>
+
+  <div class="card">
+    <h2>🪟 Windows (offline)</h2>
+    <a class="btn" href="street-bites-setup.exe">Download for Windows</a>
+    <ol>
+      <li>Open the downloaded file.</li>
+      <li>If Windows says "Windows protected your PC", click <b>More info</b>, then <b>Run anyway</b>.</li>
+      <li>It installs by itself and puts <b>Street Bites</b> on your desktop and in the Start menu.</li>
+      <li>F11 switches full screen on and off.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>🤖 Android (offline)</h2>
+    <a class="btn" href="street-bites.apk">Download the APK</a>
+    <ol>
+      <li>Open the downloaded file and allow installing from this source if asked.</li>
+      <li>To update later, install the new file over the old one. Do not uninstall first, or your saves are lost.</li>
+    </ol>
+  </div>
+
+  <p class="build">The browser, the Windows app and the Android app each keep their own saved games.</p>
+</main>
+</body>
+</html>

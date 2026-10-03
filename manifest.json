@@ -1,0 +1,23 @@
+{
+ "name": "Street Bites",
+ "short_name": "Street Bites",
+ "description": "A restaurant game by Abir's",
+ "start_url": "./",
+ "scope": "./",
+ "display": "fullscreen",
+ "orientation": "landscape",
+ "background_color": "#1d1f24",
+ "theme_color": "#1d1f24",
+ "icons": [
+  {
+   "src": "assets/icon.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

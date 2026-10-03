@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Street Bites</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body { margin: 0; height: 100%; background: #1d1f24; overflow: hidden; }
+    #game { width: 100%; height: 100%; touch-action: none; }
+    #rotate {
+      display: none; position: fixed; inset: 0; z-index: 10;
+      align-items: center; justify-content: center; text-align: center;
+      background: #1d1f24; color: #fff; font: bold 22px Arial, sans-serif; padding: 24px;
+    }
+    @media (orientation: portrait) { #rotate { display: flex; } }
+    #errors {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+      background: #b00020; color: #fff; font: 13px monospace; white-space: pre-wrap;
+    }
+    #errors:empty { display: none; }
+  </style>
+  <link rel="stylesheet" href="src/screens.css?v=14">
+</head>
+<body>
+  <div id="game"><div id="screens"></div></div>
+  <div id="rotate">Please turn your phone sideways ↻</div>
+  <div id="errors"></div>
+
+  <script>
+    // Shows any error on screen, so problems on a phone can be reported.
+    function showError(text) {
+      document.getElementById('errors').textContent += '⚠ ' + text + '\n';
+    }
+    window.addEventListener('error', (e) => {
+      const file = (e.filename || '').split('/').pop();
+      showError(`${e.message} (${file}:${e.lineno})`);
+    });
+    window.addEventListener('unhandledrejection', (e) => {
+      showError('Promise: ' + (e.reason && e.reason.message || e.reason));
+    });
+  </script>
+
+  <!-- Which build this is; the build script fills in the real number. -->
+  <script>window.BUILD = '14';</script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol === 'https:' && !window.Capacitor) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  </script>
+  <script src="lib/phaser.min.js?v=14"></script>
+  <script src="src/layouts/street-stall.js?v=14"></script>
+  <script src="src/restaurant-view.js?v=14"></script>
+  <script src="src/sfx.js?v=14"></script>
+  <script src="src/save.js?v=14"></script>
+  <script src="src/profile.js?v=14"></script>
+  <script src="src/cloud.js?v=14"></script>
+  <script src="src/menu.js?v=14"></script>
+  <script src="src/person.js?v=14"></script>
+  <script src="src/collision.js?v=14"></script>
+  <script src="src/pathfinding.js?v=14"></script>
+  <script src="src/player.js?v=14"></script>
+  <script src="src/restaurant-sim.js?v=14"></script>
+  <script src="src/furniture.js?v=14"></script>
+  <script src="src/shop.js?v=14"></script>
+  <script src="src/economy.js?v=14"></script>
+  <script src="src/daylight.js?v=14"></script>
+  <script src="src/parking.js?v=14"></script>
+  <script src="src/ui-scene.js?v=14"></script>
+  <script src="src/screens.js?v=14"></script>
+  <script src="src/arrange.js?v=14"></script>
+  <script src="src/main.js?v=14"></script>
+</body>
+</html>
